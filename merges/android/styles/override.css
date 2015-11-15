@@ -1,0 +1,39 @@
+@media screen and (-webkit-min-device-pixel-ratio: 1.5){
+	#home .home-logo h1{font-size: 3em;}
+	#home .btn-home-play{font-size: 2em; border-radius: 2em; margin-top: 10%;  margin-bottom: 1em;}
+}
+
+/*@import url(http://fonts.googleapis.com/css?family=Frijole|Handlee);*/
+
+/*common */
+body{background-color: #efd6ff;background: url(../images/bg/home.png) repeat;}
+.stripes-border{background-color: #3399FF;height: .5em;}
+#game{background: url(../images/bg/game.png) repeat;}
+
+
+
+/* statistic */
+#player{background-color: #D0F269;background: url(../images/bg/statistics.png) repeat; }
+
+#player .floating-panel{border-color: #9FCE12;background-color: #E1F7A1; }
+#player .floating-panel h2{background-color: #7FA605;}
+
+/* statistic */
+#highscore{background-color: #fed4f4;background: url(../images/bg/highscore.png) repeat;}
+/* about */
+/* credits */
+#credits{background-color: #d9ecff;background: url(../images/bg/home.png) repeat;}
+#credits .floating-panel{border-color: #1F8FFF;background-color: #C2E0FF; }
+#credits .floating-panel h2{background-color: #1F8FFF;}
+
+/* game-rules*/
+#gamerules{background-color: #C2EBEB;background: url(../images/bg/rules.png) repeat;}
+#gamerules .floating-panel{border-color: #57C7C7;background-color: #D1F0F0; }
+#gamerules .floating-panel h2{background-color: #5EA8A8;}
+
+/* trophies */
+#trophies{background-color: #DDD0A6;background: url(../images/bg/trophies.png) repeat;}
+#trophies .floating-panel{border-color: #B19643;background-color: #E5DABA; margin: 2em auto;}
+
+
+

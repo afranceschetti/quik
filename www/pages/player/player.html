@@ -1,0 +1,72 @@
+ <div  id='player' class="container wrapper" ng-cloak>
+	<div class='topbar'><div class='logo-brand'><a href="#/home">Qu!k</a></div></div>
+	<h1>{{currentPlayer}}</h1>
+	<div ng-show='!requestDelete'>
+		<div class='report-container'>
+			<div id='tropheis-container' class='report-panel floating-panel'>
+				<h2><span translate>Tropheis</span> <i class="fa fa-diamond"></i></h2>
+				<div class='tropheis-badge-container'>
+					<div class='trophies-panel'   ng-repeat="trophy in allTropheis">
+						<div class='trophies-badge trophies-badge-{{trophy.name}}' ng-show='{{trophy.obtained}}'>
+							<img ng-src='images/trophies/{{trophy.name}}.png'>
+						</div>
+						<div class='trophies-badge trophies-badge-empty' ng-show='{{!trophy.obtained}}'>
+							<i class="fa fa-question"></i>
+						</div>
+						<div class='desc'>
+							<h3 translate="trophies_{{trophy.name}}"></h3>
+							<div><span translate="trophies_{{trophy.name}}_how_obtain"></span></div>
+						</div>
+					</div>
+				</div>
+				<p><a href="#/trophies" class='' translate>player_more_about_trophies</a></p>
+			</div>
+
+
+			<div id='record-panel' class='report-panel floating-panel'>
+				<h2>Record <i class="fa fa-trophy"></i></h2>
+				<table>
+					<tbody>
+						<tr><td><strong><span translate>player_best_score</span></strong></td><td>{{recordTotalScore|number}} <span translate>points</span></td><td>{{recordTotalScoreDate|date}}</td></tr>
+						<tr><td><strong><span translate>player_best_shot</span></strong></td><td>{{recordSingleShot}} ms</td><td>{{recordSingleShotDate|date}}</td></tr>
+					</tbody>
+				</table>
+			</div>
+			<div id='statistic-panel' class='report-panel floating-panel'>
+				<h2><span translate>Statistics</span> <i class="fa fa-bar-chart"></i></h2>
+				<table>
+					<tbody>
+						<tr><td><strong translate>player_stats_last_game</strong></td><td>{{statisticLastGame|date: format :'medium'}}</td></tr>
+						<tr><td><strong translate>player_stats_total_game</strong></td><td>{{statisticTotalGames}}</td></tr>
+						<tr><td>&nbsp;<span translate>game_type_simple_title</span></td><td>{{statisticTotalGamesSimple}}</td></tr>
+						<tr><td>&nbsp;<span translate>game_type_potions_title</span></td><td>{{statisticTotalGamesPotions}}</td></tr>
+						<tr><td>&nbsp;<span translate>game_type_speed_title</span></td><td>{{statisticTotalGamesSpeed}}</td></tr>
+						<tr><td><strong translate>player_stats_total_time</strong></td><td>{{statisticTotalTimes}}</td></tr>
+						<tr><td><strong translate>player_stats_total_error</strong></td><td>{{statisticTotalError}}</td></tr>
+						<tr><td><strong translate>player_stats_total_round</strong></td><td>{{statisticTotalExpired}}</td></tr>
+						<tr><td>&nbsp;<span  translate>game_type_simple_title</span></td><td>{{statisticTotalExpiredSimple}}</td></tr>
+						<tr><td>&nbsp;<span  translate>game_type_potions_title</span></td><td>{{statisticTotalExpiredPotions}}</td></tr>
+						<tr><td>&nbsp;<span  translate>game_type_speed_title</span></td><td>{{statisticTotalExpiredSpeed}}</td></tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class='control'>
+			<a href ng-click="requestDeletePlayer()" class='btn btn-danger' translate>player_delete_player</a>
+			<a href="#/game" class='btn btn-action' translate>player_new_game</a>
+		</div>
+		<div class='home-bullet-container'>
+            <button class='round-bullet' ng-click="goToHome()"><i class='fa fa-home'></i></button>
+		</div>
+	</div>
+	<div class='floating-panel' ng-show='requestDelete'>
+		<h4 translate>player_delete_player_title</h4>
+		<h3 translate>player_delete_player_question</h3>
+		<div class='control'>
+			<a href ng-click='requestDelete=false' class='btn btn-default'>No</a>
+			<a ng-click="deletePlayer()" href class='btn btn-danger'>Ok</a>
+		</div>
+	</div>
+
+ </div>
+

@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.apps24.quik" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Quik</name>
+    <description>
+        Catch the image
+    </description>
+    <author email="aleee.it@gmail.com" href="http://quik.herokuapp.com">
+        Alessandro Franceschetti
+    </author>
+    <content src="mobile.html" />
+    <access origin="*" />
+	<platform name="android">
+		<icon src="res/screen/android/drawable-hdpi/icon.png" density="hdpi" />
+		<icon src="res/screen/android/drawable-ldpi/icon.png" density="ldpi" />
+		<icon src="res/screen/android/drawable-mdpi/icon.png" density="mdpi" />
+		<icon src="res/screen/android/drawable-xhdpi/icon.png" density="xhdpi" />
+		
+		<screen src="res/screen/android/drawable-land-hdpi/screen.png" density="land-hdpi" />
+		<screen src="res/screen/android/drawable-land-ldpi/screen.png" density="land-ldpi" />
+		<screen src="res/screen/android/drawable-land-mdpi/screen.png" density="land-mdpi" />
+		<screen src="res/screen/android/drawable-land-xhdpi/screen.png" density="land-xhdpi" />
+		
+		<screen src="res/screen/android/drawable-port-hdpi/screen.png" density="port-hdpi" />
+		<screen src="res/screen/android/drawable-port-ldpi/screen.png" density="port-ldpi" />
+		<screen src="res/screen/android/drawable-port-mdpi/screen.png" density="port-mdpi" />
+		<screen src="res/screen/android/drawable-port-xhdpi/screen.png" density="port-xhdpi" />
+	</platform>
+
+	<platform name="wp8">
+		<!-- images are determined by width and height. The following are supported -->
+		<splash src="res/screen/wp8/SplashScreenImage.jpg" width="768" height="1280"/>
+		<icon src="res/screen/wp8/ApplicationIcon.png" width="99" height="99" />
+        <icon src="res/screen/wp8/Background.png" width="159" height="159" />
+	</platform>
+</widget>

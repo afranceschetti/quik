@@ -1,0 +1,74 @@
+ <div  id='highscore' class="container" ng-cloak>
+	<div class='topbar'><div class='logo-brand'><a href="#/home">Qu!k</a></div></div>
+	<h1>Winners</h1>
+	<div class='highscore-container'>
+		<div id='totalScore-panel' class='highscore-panel floating-panel'>
+			<h2> <span translate>highscore_total_points</span> <span translate>game_type_simple_title</span> <i class="fa fa-circle"></i></h2>
+			<div class='content'>
+				<table>
+					<tbody>
+						<tr ng-repeat="player in playersByScoreSimple">
+							<td>{{$index+1}}</td>
+							<td><i ng-show="$index<3" class="fa fa-trophy trophy-{{$index}} trophy"></i></td>
+							<td><a href ng-click="showStatistic(player.name)"><strong>{{player.name}}</strong></a></td>
+							<td>{{player.totalScoreSimple|number}} </td>
+							<td>{{player.totalScoreDateSimple|date: format :'medium'}}</td></tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		
+		<div id='totalScore-panel' class='highscore-panel floating-panel'>
+			<h2> <span translate>highscore_total_points</span> <span translate>game_type_potions_title</span> <i class="fa fa-flask"></i></h2>
+			<div class='content'>
+				<table>
+					<tbody>
+						<tr ng-repeat="player in playersByScorePotions">
+							<td>{{$index+1}}</td>
+							<td><i ng-show="$index<3" class="fa fa-trophy trophy-{{$index}} trophy"></i></td>
+							<td><a href ng-click="showStatistic(player.name)"><strong>{{player.name}}</strong></a></td>
+							<td>{{player.totalScorePotions|number}} </td>
+							<td>{{player.totalScoreDatePotions|date: format :'medium'}}</td></tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div id='totalScore-panel' class='highscore-panel floating-panel'>
+			<h2> <span translate>highscore_total_points</span> <span translate>game_type_speed_title</span> <i class="fa fa-bolt"></i></h2>
+			<div class='content'>
+				<table>
+					<tbody>
+						<tr ng-repeat="player in playersByScoreSpeed">
+							<td>{{$index+1}} </td>
+							<td><i ng-show="$index<3" class="fa fa-trophy trophy-{{$index}} trophy"></i></td>
+							<td><a href ng-click="showStatistic(player.name)"><strong>{{player.name}}</strong></a></td>
+							<td>{{player.totalScoreSpeed|number}} </td>
+							<td>{{player.totalScoreDateSpeed|date: format :'medium'}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div id='singleShot-panel' class='highscore-panel floating-panel'>
+			<h2><span translate>highscore_best_shot</span> <i class="fa fa-bullseye"></i></h2>
+			<div class='content'>
+				<table>
+					<tbody>
+						<tr ng-repeat="player in playersByShot">
+							<td>{{$index+1}}</td>
+							<td><i ng-show="$index<3" class="fa fa-trophy trophy-{{$index}} trophy"></i></td>
+							<td><a href ng-click="showStatistic(player.name)"><strong>{{player.name}}</strong></a></td>
+							<td>{{player.singleShot|number}} ms</td>
+							<td>{{player.singleShotDate|date: format :'medium'}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class='home-bullet-container'>
+        <button class='round-bullet' ng-click="goToHome()"><i class='fa fa-home'></i></button>
+	</div>
+ </div>
+
+

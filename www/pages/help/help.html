@@ -1,0 +1,47 @@
+ <div  id='gamerules' class="container wrapper" ng-cloak>
+	<div class='topbar'><div class='logo-brand'><a href="#/home">Qu!k</a></div></div>
+	<h1><span translate>How to play</span></h1>
+	<div class='floating-panel'>
+		<h2>Game Rules</h2>
+		<p ng-bind-html="'help_game_rules'|translate"></p>
+	</div>
+	<div class='floating-panel'>
+		<h2 translate>Potions</h2>
+		<div translate>help_potions_intro</div>
+		<div class='potion-help-row'>
+			<img src='images/potions/doublepoint-potion.svg'>
+			<div class='desc'>
+				<h3 translate>help_potion_point</h3>
+				<div><strong translate >help_potion_how_work </strong> <span translate>help_potion_point_how_work</span></div>
+				<div><strong translate >help_potion_how_obtain </strong> <span translate>help_potion_point_how_obtain</span></div>
+			</div>
+		</div>
+		<div class='potion-help-row'>
+			<img  src='images/potions/round-potion.svg'>
+			<div class='desc'>
+				<h3 translate>help_potion_round</h3>
+				<div><strong translate >help_potion_how_work </strong> <span translate>help_potion_round_how_work</span></div>
+				<div><strong translate >help_potion_how_obtain </strong> <span translate>help_potion_round_how_obtain</span></div>
+			</div>
+		</div>
+		<div class='potion-help-row'>
+			<img  src='images/potions/halfimage-potion.svg'>
+			<div class='desc'>
+				<h3 translate>help_potion_images</h3>
+				<div><strong translate >help_potion_how_work </strong> <span translate>help_potion_images_how_work</span></div>
+				<div><strong translate >help_potion_how_obtain </strong> <span translate>help_potion_images_how_obtain</span></div>
+			</div>
+		</div>
+		<div class='potion-help-row'>
+			<img src='images/potions/freezetime-potion.svg'>
+			<div class='desc'>
+				<h3 translate>help_potion_time</h3>
+				<div><strong translate >help_potion_how_work </strong> <span translate>help_potion_time_how_work</span></div>
+				<div><strong translate >help_potion_how_obtain </strong> <span translate>help_potion_time_how_obtain</span></div>
+			</div>
+		</div>
+	</div>
+	<div class='home-bullet-container'>
+        <button class='round-bullet' ng-click="goToHome()"><i class='fa fa-home'></i></button>
+	</div>
+</div>
