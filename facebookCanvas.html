@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="quik" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="quik" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="quik" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="quik" class="no-js"> <!--<![endif]-->
+<head>
+   <meta name="format-detection" content="telephone=no" />
+   <meta name="msapplication-tap-highlight" content="no" />
+   <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+   <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Qu!k | Catch the image</title>
+  <meta name="description" content="">
+  <link rel="icon" href="/favicon.png" />
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
+  <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
+  <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="font/generated/stylesheet.css">
+
+  <link rel="stylesheet" href="styles/animate.min.css">
+
+	<meta property="og:title" content="Qu!k - Catch the image"/>
+	<meta property="og:image" content="https://quik.herokuapp.com/images/logo/logo-sq-256.png"/>
+	<meta property="og:description" content="Quik game, images and fun"/>
+
+  <!-- <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"> -->
+  <!-- <link rel="stylesheet" href="styles/app.css"> -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- link rel="stylesheet" href="styles/mediaquery.css" -->
+  <link rel="stylesheet" href="styles/facebook.css">
+  <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+	<div ng-view></div>
+	<footer ng-controller="FooterCtrl as footerCtrl">
+		<ul>
+			<li class='footer-column'>
+				<p><a href="#/home" class='logo-brand'>Qu!k</a></p>
+				<!--<p><a href="#/about" class=''>About</a></p>-->
+				<p><a href="#/about"" class=''>about</a></p>
+				<p>&copy; 2015</p>
+				<p>
+					<a href ng-click="changeLanguage('en')" class="menu-flag-icon menu-flag-icon-en" title="{{'English'|translate}}"></a> 
+					<a href ng-click="changeLanguage('it')" class="menu-flag-icon menu-flag-icon-it" title="{{'Italian'|translate}}"></a>
+				</p>
+			</li>
+			<li class='footer-column'>
+				<p><span translate>The game</span></p>
+				<p><a href="#/help" class='' translate>Rules</a></p>
+				<p><a href="#/trophies" class=''translate>Trophies</a></p>
+				<p><a href="#/highscore" class=''>Highscores</a></p>
+			</li>
+			<li class='footer-column'>
+				<p><span translate>Apps</span></p>
+				<p><span><i class="fa fa-android"></i> Coming soon &hellip;</span></a></p>
+				<p><span><i class="fa fa-apple"></i> Coming soon &hellip;</span></a></p>
+				<p><span><i class="fa fa-windows"></i> Coming soon &hellip;</span></a></p>
+			</li>
+			<li class='footer-column'>
+
+				<p>
+					<div class="fb-like" data-href="http://quik.herokuapp.com/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
+				</p>
+				<p><g:plusone size="small" href="http://quik.herokuapp.com"></g:plusone></p>
+			</li>
+		</ul>
+	</footer>
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <!-- endbower -->
+    <!-- endbuild -->
+	<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+	<script src="bower_components/jquery/dist/jquery.min.js">
+	<script>
+	  window.fbAsyncInit = function() {
+	    FB.init({appId      : '529789490492073',xfbml      : true,version    : 'v2.2'});
+		FB.getLoginStatus(function(response) {
+			  // Check login status on load, and if the user is
+			  // already logged in, go directly to the welcome message.
+			  console.error("FB.getLoginStatus", response);
+			  if (response.status == 'connected') {
+				onLogin(response);
+			  } else {
+				// Otherwise, show Login dialog first.
+				FB.login(function(response) {
+				  onLogin(response);
+				}, {scope: 'user_friends, email'});
+			  }
+			});
+
+	  };
+	  
+	
+	  (function(d, s, id){
+	     var js, fjs = d.getElementsByTagName(s)[0];
+	     if (d.getElementById(id)) {return;}
+	     js = d.createElement(s); js.id = id;
+	     js.src = "//connect.facebook.net/en_US/sdk.js";
+	     fjs.parentNode.insertBefore(js, fjs);
+	   }(document, 'script', 'facebook-jssdk'));
+	   
+	  function onLogin(response) {
+		  console.error("onLogin", response);
+		  if (response.status == 'connected') {
+			FB.api('/me?fields=first_name', function(data) {
+			  var welcomeBlock = document.getElementById('fb-welcome');
+			  welcomeBlock.innerHTML = 'Hello, ' + data.first_name + '!';
+			});
+		  }
+		}
+
+		FB.getLoginStatus(function(response) {
+		  // Check login status on load, and if the user is
+		  // already logged in, go directly to the welcome message.
+		  console.error("FB.getLoginStatus", response);
+		  if (response.status == 'connected') {
+			onLogin(response);
+		  } else {
+			// Otherwise, show Login dialog first.
+			FB.login(function(response) {
+			  onLogin(response);
+			}, {scope: 'user_friends, email'});
+		  }
+		});
+	</script>
+	
+	<script type="text/javascript">
+	  (function() {
+		var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+		po.src = 'https://apis.google.com/js/plusone.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+	  })();
+	</script>
+
+
+	   <script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	
+	  ga('create', 'UA-60647724-3', 'auto');
+	  ga('send', 'pageview');
+	
+	</script>
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="bower_components/angular/angular.js"></script>
+  <!-- <script src="bower_components/angular-timer/dist/angular-timer.min.js"></script> -->
+  <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+  <script src="bower_components/angular-touch/angular-touch.min.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-timer/app/js/timer.js"></script>
+  <script src="bower_components/angular-timer/app/js/i18nService.js"></script>
+  <script src="bower_components/humanize-duration/humanize-duration.js"></script>
+  <script src="bower_components/momentjs/min/moment.min.js"></script>
+  <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+  <script src="bower_components/angular-translate/angular-translate.min.js"></script>
+  <script src="components/helper.js"></script>
+  <script src="components/constants.js"></script>
+  <script src="app.js"></script>
+  <script src="pages/home/home.js"></script>
+  <script src="pages/game/game.js"></script>
+  <script src="pages/player/player.js"></script>
+  <script src="pages/highscore/highscore.js"></script>
+  <script src="pages/credits/credits.js"></script>
+  <script src="pages/help/help.js"></script>
+  <script src="pages/trophies/trophies.js"></script>
+  <script src="i18n/strings_en.js"></script>
+  <script src="i18n/strings_it.js"></script>
+  <script src="components/version/version.js"></script>
+  <script src="components/version/version-directive.js"></script>
+  <script src="components/version/interpolate-filter.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,190 @@
+  <div  id='game' class="container" ng-show="!finish">
+	<div id="game-topbar">
+		<div class='logo-brand'><a href="#/home">Qu!k</a></div>
+		<div class='game-datas'>
+			<div>
+				<div id='player-panel' class='game-datas'>
+					<div><a href="#/player">{{currentPlayer}}</a></div>
+					<div>Best: {{recordTotalScore | number}}</div>
+				</div>
+				<div id='game-round' class='game-data game-data-block'>
+					<div class='game-data-label'>Round</div>
+					<div class='game-data-value'  id='game-round-value'>{{round}}/<span class="{{maxRoundStyle}}" id='numRound'>{{numRound}}</span></div>
+				</div>
+				<div id='game-score' class='game-data game-data-block'>
+					<div class='game-data-label' translate>Score</div>
+					<div class='double-point' ng-show="useDoublePoint">x 2</div>
+					<div class='game-data-value' id='game-score-value'>{{score| number}}</div>
+				</div>
+			</div>
+			<div id='title-help' class='help'><span translate>game_main_help_1</span>&hellip; <span  translate>game_main_help_2</span></div>
+		</div>
+		<div id='game-type'>
+			<div class='title' translate="game_type_{{gameType}}_title"></div>
+			<div class='desc' translate="game_type_{{gameType}}_intro"></div>
+		</div>
+<!-- 		<div id='game-countdown' ng-show="!finish" >
+			<span id='game-countdown-value' >
+				<timer id="game-countdown-timer" countdown="maxSeconds" class="animated {{countdownStyle}}" interval="1000" finish-callback="callbackTimer.finished()">{{seconds}} s</timer> 
+			</span>
+			<div class='countdown-progressbar'><div class='countdown-progress' style="{{countdownProgressStyle}}"></div></div>
+		</div>
+-->
+    </div>
+	<div id='game-countdown' ng-show="!isPreparing" >
+		<span id='game-countdown-value' >
+			<timer id="game-countdown-timer" countdown="maxSeconds" class="animated {{countdownStyle}}" interval="1000" finish-callback="callbackTimer.finished()">{{seconds}} s</timer> 
+			<!--<span id='game-countdown-span' class="animation" >{{remainingSeconds}}</span> -->
+		</span>
+		<div class='countdown-progressbar'><div class='countdown-progress' style="{{countdownProgressStyle}}"></div></div>
+	</div>
+	<div id='game-getready-panel' ng-show='isPreparing'>
+		<div class='traffic-light'>
+			<div id='traffic-light-red' class='traffic-light-item'></div>
+			<div id='traffic-light-yellow' class='traffic-light-item'></div>
+			<div id='traffic-light-green' class='traffic-light-item'></div>
+		</div>
+		<div class='traffic-light-label' translate="{{getReadyLabel}}"></div>
+	</div>	
+
+
+	<div id='game-board' ng-show="!finish && !pause">		
+		<!-- <div class='help' id='help-proposed-images'><span class='bullet'>1</span> look at these images...</div> -->
+		<div id='computer-images' class='images-container images-container-computer'>
+			<a ng-show='showImages' ng-click="imageClick(0,'computer')"  class='single-image-container' id='computer-image-container-0' ><img class='single-image' id='computer-image-0' type="image/svg+xml" ></img></a>
+			<a ng-show='showImages' ng-click="imageClick(1,'computer')"  class='single-image-container' id='computer-image-container-1'><img  class='single-image' id='computer-image-1' type="image/svg+xml" ></img></a>
+			<a ng-show='showImages' ng-click="imageClick(2,'computer')"  class='single-image-container' id='computer-image-container-2' ><img class='single-image' id='computer-image-2' type="image/svg+xml" ></img></a>
+			<a ng-show='showImages' ng-click="imageClick(3,'computer')"  class='single-image-container' id='computer-image-container-3' ><img class='single-image' id='computer-image-3' type="image/svg+xml" ></img></a>
+			<a ng-show='showImages' ng-click="imageClick(4,'computer')"  class='single-image-container' id='computer-image-container-4' ><img class='single-image' id='computer-image-4' type="image/svg+xml" ></img></a>
+			<a ng-show='showImages' ng-click="imageClick(5,'computer')"  class='single-image-container' id='computer-image-container-5' ><img class='single-image' id='computer-image-5' type="image/svg+xml" ></img></a>
+			<a ng-show='showImages' ng-click="imageClick(6,'computer')"  class='single-image-container' id='computer-image-container-6' ><img class='single-image' id='computer-image-6' type="image/svg+xml" ></img></a>
+			<!-- <div class='single-image-container' id='computer-image-container-7' ><object class='single-image' id='computer-image-7' type="image/svg+xml" ></img></div>-->
+		</div>
+		<!-- <div class='help' id='help-found-images'><span class='bullet'>2</span> &hellip;only one is in common&hellip; Find it!</div>  -->
+		<div id='player-images'  class='images-container images-container-player'>
+			<a ng-show='showImages' ng-click="imageClick(0,'player')" class='single-image-container' id='player-image-container-0' ><img class='single-image' id='player-image-0' type="image/svg+xml" ></img></a>
+			<a ng-show='showImages' ng-click="imageClick(1,'player')" class='single-image-container' id='player-image-container-1' ><img class='single-image' id='player-image-1' type="image/svg+xml" ></img></a>
+			<a ng-show='showImages' ng-click="imageClick(2,'player')" class='single-image-container' id='player-image-container-2' ><img class='single-image' id='player-image-2' type="image/svg+xml" ></img></a>
+			<a ng-show='showImages' ng-click="imageClick(3,'player')" class='single-image-container' id='player-image-container-3' ><img class='single-image' id='player-image-3' type="image/svg+xml" ></img></a>
+			<a ng-show='showImages' ng-click="imageClick(4,'player')" class='single-image-container' id='player-image-container-4' ><img class='single-image' id='player-image-4' type="image/svg+xml" ></img></a>
+			<a ng-show='showImages' ng-click="imageClick(5,'player')" class='single-image-container' id='player-image-container-5' ><img class='single-image' id='player-image-5' type="image/svg+xml" ></img></a>
+			<a ng-show='showImages' ng-click="imageClick(6,'player')" class='single-image-container' id='player-image-container-6' ><img class='single-image' id='player-image-6' type="image/svg+xml" ></img></a>
+			<a ng-show='showImages' ng-click="imageClick(7,'player')" class='single-image-container' id='player-image-container-7' ><img class='single-image' id='player-image-7' type="image/svg+xml" ></img></a>			
+		</div>
+		
+		
+		<div id='game-shot-point' class='animated {{shotStyle}}'>{{shot}}</div>
+		<div id='help-potion-hint' class='help' ng-show='!isPreparing && gameType=="potions" '>
+			<img src='images/potions/help-potion.svg'><a href ng-click="showPotionHelp()" translate>game_help_potion_hint</a>
+		</div>
+		
+		<div id='game-potions-panel' ng-show='!isPreparing && gameType=="potions"'>
+			<div class='potion-container'>
+				<a href ng-click="usePointPotion()"><img id='game-potion-point' class='animated' src='images/potions/doublepoint-potion.svg'></a>
+				<div class='potion-bullet'><a href ng-click="usePointPotion()">{{pointPotionCount}}</a></div>
+				<div class='potion-desc' translate>points</div>
+			</div>
+			<div class='potion-container'>
+				<a href ng-click="useRoundPotion()"><img id='game-potion-round' class='animated' src='images/potions/round-potion.svg'></a>
+				<div class='potion-bullet'><a href ng-click="useRoundPotion()">{{roundPotionCount}}</a></div>
+				<div class='potion-desc' translate>round</div>
+			</div>
+			<div class='potion-container'>
+				<a href ng-click="useTimePotion()"><img id='game-potion-time' class='animated' src='images/potions/freezetime-potion.svg'></a>
+				<div class='potion-bullet'><a href ng-click="useTimePotion()">{{timePotionCount}}</a></div>
+				<div class='potion-desc' translate>time</div>
+			</div>
+			<div class='potion-container'>
+				<a href ng-click="useImagePotion()"><img id='game-potion-image' class='animated' src='images/potions/halfimage-potion.svg'></a>
+				<div class='potion-bullet'><a href ng-click="useImagePotion()">{{imagePotionCount}}</a></div>
+				<div class='potion-desc' translate>images</div>
+			</div>
+		</div>
+	</div>
+	<div id="help-potion" class='floating-panel' ng-show="potionHelpVisible">
+		<h2 translate>Potions</h2>
+		<div translate>help_potions_intro</div>
+		<div class='potion-help-row'>
+			<img src='images/potions/doublepoint-potion.svg'>
+			<div class='desc'>
+				<h3 translate>help_potion_point</h3>
+				<div><strong translate >help_potion_how_work </strong> <span translate>help_potion_point_how_work</span></div>
+				<div><strong translate >help_potion_how_obtain </strong> <span translate>help_potion_point_how_obtain</span></div>
+			</div>
+		</div>
+		<div class='potion-help-row'>
+			<img  src='images/potions/round-potion.svg'>
+			<div class='desc'>
+				<h3 translate>help_potion_round</h3>
+				<div><strong translate >help_potion_how_work </strong> <span translate>help_potion_round_how_work</span></div>
+				<div><strong translate >help_potion_how_obtain </strong> <span translate>help_potion_round_how_obtain</span></div>
+			</div>
+		</div>
+		<div class='potion-help-row'>
+			<img  src='images/potions/halfimage-potion.svg'>
+			<div class='desc'>
+				<h3 translate>help_potion_images</h3>
+				<div><strong translate >help_potion_how_work </strong> <span translate>help_potion_images_how_work</span></div>
+				<div><strong translate >help_potion_how_obtain </strong> <span translate>help_potion_images_how_obtain</span></div>
+			</div>
+		</div>
+		<div class='potion-help-row'>
+			<img src='images/potions/freezetime-potion.svg'>
+			<div class='desc'>
+				<h3 translate>help_potion_time</h3>
+				<div><strong translate >help_potion_how_work </strong> <span translate>help_potion_time_how_work</span></div>
+				<div><strong translate >help_potion_how_obtain </strong> <span translate>help_potion_time_how_obtain</span></div>
+			</div>
+		</div>
+		<a class='text-link' href ng-click="hidePotionHelp()" translate>Close</a>
+	</div>
+	<div id="game-start">
+	</div>
+	<a id='home-bullet' class='round-bullet' href='#/home'><i class='fa fa-home'></i></a>
+</div>
+<div id="game-finish" class='floating-panel' ng-show="finish">
+	<h2>Game Over</h2>
+	<div class='score'><span><strong translate>game_finish_score</strong></span>: {{score | number}} <span translate>points</span> <span ng-show='newRecordScore' class='new-record  animated bounceInRight'><i class="fa fa-trophy"></i> new record!</span></div>
+	<div class='score'><span><strong translate>game_finish_shot</strong></span>: {{minShot | number}} ms <span ng-show='newRecordShot' class='new-record  animated bounceInRight'><i class="fa fa-trophy"></i> new record!</span></div>
+	<div class='potion-win' ng-show="wonPotions()">
+		<span><strong translate>game_finish_potions_won</strong></span> 
+		<div class='potion-container'  ng-show="wonPointPotion>0">
+			<img src='images/potions/doublepoint-potion.svg'>  
+			<div class='potion-desc' translate>points</div>
+		</div>
+		<div class='potion-container'  ng-show="wonTimePotion>0">
+			<img src='images/potions/freezetime-potion.svg'>  
+			<div class='potion-desc' translate>time</div>
+		</div>
+		<div class='potion-container'  ng-show="wonRoundPotion>0">
+			<img src='images/potions/round-potion.svg'>  
+			<div class='potion-desc' translate>round</div>
+		</div>
+		<div class='potion-container' ng-show="wonImagePotion>0">
+			<img src='images/potions/halfimage-potion.svg'>  
+			<div class='potion-desc' translate>image</div>
+		</div>
+	</div>
+	<div class='tropheis-win' ng-show="newTrophies.length>0">
+		<div  class='tropheis-intro'><strong translate>game_finish_tropheis_won</strong></div> 
+		<div class='tropheis-container'  ng-repeat="trophy in newTrophies">
+			<div class='trophies-badge trophies-badge-{{trophy}}'><img ng-src='images/trophies/{{trophy}}.png'></div>				
+			<div class='trophies-hint' translate="trophies_{{trophy}}"></div>
+		</div>
+	</div>
+	
+	<div class='control'>
+		<a ng-click="start()" href class='btn btn-start' translate>game_finish_play_again</a>
+	</div>
+	<div class='share-bar'>
+		<a href ng-click="postOnFacebook()" class='btn btn-share btn-share-facebook'><i class="fa fa-facebook"></i></a>
+		<a href ng-click="postOnTwitter()" class='btn btn-share btn-share-twitter'><i class="fa fa-twitter"></i></a>
+		<a href ng-click="postOnGooglePlus()" class='btn btn-share btn-share-googleplus'><i class="fa fa-google-plus"></i></a>
+	</div>
+	<div>
+		<a class='text-link' href='#/home'>Home</a>
+		<a class='text-link' href="#/highscore">High Score</a>
+		<a class='text-link' href="#/player" translate>Statistics</a>
+	</div>
+	<div class='stripes-border stripes-border-bottom'></div>
+</div>

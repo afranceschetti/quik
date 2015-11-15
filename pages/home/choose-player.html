@@ -1,0 +1,38 @@
+ <div  id='choose-player' ng-cloak>
+	<div class='floating-panel' >
+		<div class='stripes-border stripes-border-top'></div>
+		<div class='home-game-type-button-panel'>
+			<label translate>choose_game_type</label>
+			<a ng-click='chooseGameType("simple")' class='home-game-type-button home-game-type-button{{gameTypeSimple}} button-choose-simple'>
+				<div class='button-icon '><i class="fa fa-circle"></i></div>
+				<div class='button-label'><span translate>game_type_simple_title</span></div>
+				<div class='button-selected'  ng-show='gameType=="simple"'><i class="fa fa-check"></i></div>
+			</a>
+			<a href ng-click='chooseGameType("potions")'  class='home-game-type-button home-game-type-button{{gameTypePotions}} button-choose-potions'>
+				<div class='button-icon'><i class="fa fa-flask"></i></div>
+				<div class='button-label'><span translate>game_type_potions_title</span></div>
+				<div class='button-selected'  ng-show='gameType=="potions"'><i class="fa fa-check"></i></div>
+			</a>
+			<a href ng-click='chooseGameType("speed")'  class='home-game-type-button home-game-type-button{{gameTypeSpeed}} button-choose-speed'>
+				<div class='button-icon'><i class="fa fa-bolt"></i></div>
+				<div class='button-label'><span translate>game_type_speed_title</span></div>
+				<div class='button-selected' ng-show='gameType=="speed"'><i class="fa fa-check"></i></div>
+			</a>
+			
+		</div>
+		<div>
+			<div>
+				<label translate>home_insert_name</label>
+				<input type='text' ng-model="currentPlayer" placeholder="Your name..." ng-enter="addPlayer()" class='home-player-name-input'/>
+				<a href class='btn btn-action home-player-name-button' ng-click="addPlayer()" translate>home_start_game</a>
+			</div>
+			<div class='player-list-intro'><small translate>home_choose_player</small></div>
+			<ul class='list-unstyled'>
+				<li ng-repeat="player in allPlayers"><a href ng-click="startGame(player)">{{player}}</a></li>
+			</ul>
+		</div>
+		<div class='note' translate>home_note_saving</div>
+		<div class='stripes-border stripes-border-bottom'></div>
+	</div>
+ </div>
+

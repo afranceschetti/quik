@@ -1,0 +1,195 @@
+
+@media screen and (orientation:portrait){
+	.floating-panel{font-size: 1.2em; width: 100%;}
+	
+	.home-bullet-container{display: block;}
+	a:active {outline: none;}
+	#home .home-logo{margin-top: 10%}
+	#home .text-link{font-size: 1.5em;}
+	
+	#home .bottom-toolbar {display: block; font-size: 2em; margin: 1em 0;}
+	
+	#choose-player {/*font-size: 32pt;*/}
+	#choose-player  .floating-panel{/*margin: 0*/};
+	#choose-player label{  margin: 1em 0 .5em 0;}
+	#choose-player  input{width: 80%;}
+	#choose-player  .home-player-name-button{width: 80%; margin-top: .5em;padding: .2em .5em; ;}
+	
+	#game #home-bullet{display: block; bottom: 2em; }
+	
+	#game-topbar{ min-height: 60px;}
+	#game-topbar .logo-brand{display: none;}
+	#game-topbar .game-data{margin-right:.4em; margin-top: 10px;  }
+	#game-topbar .game-data-block{background: transparent; box-shadow: none; padding: .0;color: #000; }
+	#game-topbar .game-data-block .game-data-label{font-size: .4em; font-weight: normal;}
+	#game-topbar .game-data-block .game-data-value{font-size: .6em; font-weight: normal;}
+	#game-topbar #player-panel{display: none;}
+	#game-type{font-size: .8em;margin:10 auto; width: 100px; display: block;}
+	#game-type .title{font-size: .8em; font-weight: bold; margin: 16px 0;}
+	#game-type .desc{display: none;}
+	#game-topbar #title-help{display: none;}
+	
+	#game-board{margin: 0 auto; width:100%; padding-bottom: 48px; padding-top: 6px;}
+	
+	#game-getready-panel{font-size: .3em; top:.3em; left: 15%; right: auto;}
+	#game-countdown{font-size: 1.1em; top:10px; left: 15%; right: auto;}
+	#game-shot-point{font-size: 2em; top: 1%; left: 50%;}
+	
+	
+	.images-container{width:55%; position: relative; padding: 1%;}
+	.images-container-computer { border-width: 6px; margin-left: 12px;}
+	.images-container-player { border-width: 6px; margin-right: 12px; }	
+	
+	#game-finish {font-size: 1em;}
+	
+	#game-potions-panel{top: 0; height: 17em; right: 0;  left: auto; width: 3em; margin: 0; ;
+		padding: .2em; border-radius: .4em 0  0 .4em; font-size: .8em; }
+	#help-potion-hint{right: 4em; left: auto;top:8em; bottom:auto; width: 5.5em; font-size: .6em}
+	#help-potion{/*font-size: 12px;*/}
+	
+	footer{display: none;}
+	
+	#about .floating-panel{width: 90%; font-size: .9em;}
+	#info  .floating-panel{width: 90%; font-size: 1.2em;}
+	#info  .floating-panel p{margin: .5em 0;}
+	#setting .floating-panel{width: 90%; font-size: 1.2em;}
+	
+	#highscore{/*font-size: .4em;*/}
+	#highscore .logo-brand{font-size: 1.5em; }
+	#highscore .floating-panel h2{font-size: .9em; padding: .5em 1em;}
+	#highscore .highscore-panel table{font-size: .5em; }
+	#highscore .highscore-panel table tr{height: auto }
+	#highscore .highscore-panel table td{vertical-align: center;padding: .1em;}
+	#highscore .trophy{font-size: 1em;}
+	#highscore .home-bullet-container{/*font-size: 6em;*/}
+
+	#trophies .logo-brand{font-size: 1.5em; }
+	#trophies .floating-panel h2{font-size: .9em; padding: .5em 1em;}
+	#trophies .intro{font-size: .8em;}
+	#trophies h5{margin: .5em 0;}
+	#trophies .trophies-panel-big{font-size: 18pt;}
+	#trophies .trophies-panel-big .desc{font-size: 12pt;margin-left: 0;width: auto; }
+	#trophies .trophies-panel .desc{font-size: .6em; width: 11em;}
+	#trophies .floating-panel p{text-align: left;}
+	#trophies .trophies-panel {  display: block;  clear: both; overflow: hidden;  padding: .5em; }
+
+
+	#player{font-size: .4em;}
+	#player .logo-brand{font-size: 1.5em; }
+	.report-panel{font-size: 12pt;}
+	#player .floating-panel h2{font-size: .9em; padding: .5em 1em;}
+	#player .report-container{padding: 0;}	
+	#player .trophies-panel .desc{font-size: 1em; }
+	#player .control{text-align: center ;margin:.5em 0;}
+	#player .control .btn{width: 8em;margin: .8em;font-size: 16pt;}
+	#player .home-bullet-container{font-size: 6em;}
+	
+	#gamerules{font-size: .4em;}
+	#gamerules h1{margin-top: 2em; margin-bottom: 0;}
+	#gamerules .floating-panel{width: auto;font-size: 3em;}
+	#gamerules .floating-panel h2{font-size: .9em; padding: .5em 1em;}
+	#gamerules .logo-brand{font-size: 1.5em; }
+	#gamerules ul {padding: 0;}
+	#gamerules li {text-align: left;}
+	#gamerules .potion-help-row .desc {font-size: .45em;width: auto;}
+	#gamerules .home-bullet-container{font-size: 6em;}
+ }
+
+@media only screen 
+  and (min-device-width: 768px) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+	body{font-size: 32px;}
+	#trophies .trophies-panel .desc{ width: 20em;}
+	
+}
+
+ @media only screen and (orientation:portrait) {
+   .images-container{width:55%; }
+ }
+ @media only screen and (orientation:landscape) {
+   .images-container{width:35%;}
+   #game #home-bullet {bottom: 1em; }
+   .images-container-computer {margin-left: 4px;}
+   .images-container-player {margin-right: 4em;}	
+   #help-potion-hint{right: 50%; left: auto;bottom:1em;  font-size: .6em; height: auto;}
+   
+ }
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 736px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+		
+}
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+	
+}
+
+
+/* ----------- iPhone 5 and 5S ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+/* ----------- iPhone 6 ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+
+}
+
+/* ----------- iPhone 6+ ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+}
+
+Galaxy Phones
+
+/* ----------- Galaxy S3 ----------- */
+
+/* Portrait and Landscape */
+@media screen 
+  and (device-width: 320px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 2) {
+
+}
+
+
+/* ----------- Galaxy S4 ----------- */
+
+/* Portrait and Landscape */
+@media screen 
+  and (device-width: 320px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) {
+
+}
+
+
+/* ----------- Galaxy S5 ----------- */
+
+/* Portrait and Landscape */
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) {
+
+}

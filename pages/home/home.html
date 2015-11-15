@@ -1,0 +1,20 @@
+ <div  id='home' class="container" ng-cloak>
+	<div class='home-logo  animated swing'>
+		<h1 id='home-logo'>Qu!k</h1>
+	</div>
+	<div class='home-menu'>
+        <div class='btn-container'>
+            <button class='btn btn-home-play' ng-click="goToChoosePlayer()" translate>home_new_game</button>
+        </div>
+		<div class='btn-container'><a class='text-link' href="#/player">{{currentPlayer}}</a></div>
+		<!--<div class='btn-container'><a class='text-link' href="#/highscore">High Score</a></div>-->
+		<div class='bottom-toolbar'>
+			<button class='button-link' ng-click="goToAbout()"><i class="fa fa-info"></i></button>
+			<button class='button-link' ng-click="goToInfo()"><i class="fa fa-question"></i></button>
+			<button class='button-link' ng-click="goToSetting()"><i class="fa fa-cog"></i></button>
+		</div>
+		
+		
+	</div>
+ </div>
+
