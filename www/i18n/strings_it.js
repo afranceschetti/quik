@@ -21,6 +21,7 @@ var translations_it = {
 	Ready: 'Pronti',
 	Set: 'Partenza',
 	Go: 'Via!',
+	Share: 'Dillo agli amici',
 	
 	choose_game_type: 'Scegli il gioco' ,
 	game_type_simple_title: 'Simple',

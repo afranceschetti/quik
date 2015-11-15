@@ -21,7 +21,8 @@ var translations_en = {
 	Ready: 'Ready',
 	Set: 'Set',
 	Go: 'Go!',
-	
+	Share: 'Share with friends',
+
 	choose_game_type: 'Choose game type' ,
 
 	game_type_simple_title: 'Simple',

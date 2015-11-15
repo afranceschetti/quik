@@ -15,6 +15,7 @@ Constants.HOME_URL_HTTPS = "https://" + Constants.APP_DOMAIN;
 Constants.LOGO_URL = Constants.HOME_URL_HTTPS +"/images/logo/logo-sq-256.png";
 Constants.SHARE_PICTURE = Constants.HOME_URL_HTTPS +"/images/share/share-";
 Constants.SHARE_HASHTAG = "quik";
+Constants.SHARE_TITLE = "Qu!k catch the images";
 
 				
 

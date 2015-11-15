@@ -1,0 +1,5 @@
+dist/
+keystore/
+platforms/
+plugins/
+Thumbs.db

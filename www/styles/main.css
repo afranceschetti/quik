@@ -165,6 +165,7 @@ a.single-image-container:hover{cursor: pointer;}
 #game-finish .new-record i {color: #c4a000;}
 #game-finish .text-link{margin: 0; padding: 0 2em; font-size: .75em; }
 #game-finish .share-bar{margin: 1em 0;}
+#game-finish .share-bar button{border:  0.1em solid #6A0065;overflow: hidden;width: auto;height: 2em;font-size: 0.9em;color:#fff;line-height: 1.2em;margin: 0px 0.5em;background-color: #A80BA1;padding: 0.2em 1em;border-radius: 2em; }
 #game-finish .btn-share{width: 1.2em; height: 1.2em; border-radius: 1em; text-align: center;  line-height: 1.2em;padding: .15em .05em .05em .15em;}
 #game-finish .btn-share i{margin-right: 0;}
 #game-finish .btn-share-facebook{background-color: #415e9b;border-color: #415e9b; text-align: center}
@@ -340,4 +341,6 @@ padding: 24px 5%;}
 .trophies-badge-empty{background-color:#eeeeec; border-color: #babdb6; color: #babdb6;}
 .trophies-badge-empty i{display: block; height: 64px; width: 64px; font-size: 64px; text-align: center}
 
+.cordova-share-button{display: none;}
+.web-share-button{display: block;}
 

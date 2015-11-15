@@ -176,15 +176,18 @@
 	<div class='control'>
 		<a ng-click="start()" href class='btn btn-start' translate>game_finish_play_again</a>
 	</div>
-	<div class='share-bar'>
-		<a href ng-click="postOnFacebook()" class='btn btn-share btn-share-facebook'><i class="fa fa-facebook"></i></a>
-		<a href ng-click="postOnTwitter()" class='btn btn-share btn-share-twitter'><i class="fa fa-twitter"></i></a>
-		<a href ng-click="postOnGooglePlus()" class='btn btn-share btn-share-googleplus'><i class="fa fa-google-plus"></i></a>
-	</div>
-	<div>
-		<a class='text-link' href='#/home'>Home</a>
-		<a class='text-link' href="#/highscore">High Score</a>
-		<a class='text-link' href="#/player" translate>Statistics</a>
-	</div>
-	<div class='stripes-border stripes-border-bottom'></div>
+    <div class='share-bar cordova-share-button'>
+        <button ng-click="share()"><i class="fa fa-share-alt"></i> <span translate>Share</span></button>
+    </div>
+    <div class='share-bar web-share-button'>
+        <a href ng-click="postOnFacebook()" class='btn btn-share btn-share-facebook'><i class="fa fa-facebook"></i></a>
+        <a href ng-click="postOnTwitter()" class='btn btn-share btn-share-twitter'><i class="fa fa-twitter"></i></a>
+        <a href ng-click="postOnGooglePlus()" class='btn btn-share btn-share-googleplus'><i class="fa fa-google-plus"></i></a>
+    </div>
+    <div>
+        <a class='text-link' href='#/home'>Home</a>
+        <a class='text-link' href="#/highscore">High Score</a>
+        <a class='text-link' href="#/player" translate>Statistics</a>
+    </div>
+    <div class='stripes-border stripes-border-bottom'></div>
 </div>
