@@ -2,8 +2,8 @@
 
 A simple game made with my daughters after playing [Doodle](https://fr.wikipedia.org/wiki/Dobble). 
 
-<div align="center">
-	<img src="https://raw.githubusercontent.com/afranceschetti/quik/master/res/github/readme/logo.png" alt="Android Play Store"/>
+<div align="right">
+	<img src="https://raw.githubusercontent.com/afranceschetti/quik/master/res/github/readme/logo.png" alt="Quik!"/>
 </div>
  
 **Play it [here](http://afranceschetti.github.io/quik/)** or use the apps on [Play Store](https://play.google.com/store/apps/details?id=com.apps24.quik) and [Windows Store](https://www.microsoft.com/it-it/store/games/quikgame/9NBLGGH2R2F5)
