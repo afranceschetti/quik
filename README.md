@@ -9,11 +9,11 @@ A simple game made with my daughters after playing [Doodle](https://fr.wikipedia
 **Play it [here](http://afranceschetti.github.io/quik/)** or use the apps on [Play Store](https://play.google.com/store/apps/details?id=com.apps24.quik) and [Windows Store](https://www.microsoft.com/it-it/store/games/quikgame/9NBLGGH2R2F5)
 
 <p align="left">
-  <a href="https://www.microsoft.com/it-it/store/games/quikgame/9NBLGGH2R2F5" target='_blank'>
+  <a href="https://play.google.com/store/apps/details?id=com.apps24.quik" target='_blank'>
 	<img src="https://raw.githubusercontent.com/afranceschetti/quik/master/res/github/readme/playstore.png" alt="Android Play Store"/>
    </a> 
    
-  <a href="https://play.google.com/store/apps/details?id=com.apps24.quik" target='_blank'>
+  <a href="https://www.microsoft.com/it-it/store/games/quikgame/9NBLGGH2R2F5" target='_blank'>
 	<img src="https://raw.githubusercontent.com/afranceschetti/quik/master/res/github/readme/windowsstore.png" alt="Windows Store"/>
    </a> 
 </p>
