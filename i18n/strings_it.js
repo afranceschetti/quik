@@ -101,7 +101,7 @@ var translations_it = {
 	trophies_buffalo: 'Bufalo',
 	trophies_buffalo_desc: 'Avanti, senza fermarti',
 	trophies_buffalo_how_obtain: 'Fai 100 partite',
-	trophies_cheetah: 'Gepardo',
+	trophies_cheetah: 'Ghepardo',
 	trophies_cheetah_desc: 'Veloce e resistente',
 	trophies_cheetah_how_obtain: '5 round consecutivi con shot minori di 3 sec.',
 	trophies_cicada: 'Cicala',
