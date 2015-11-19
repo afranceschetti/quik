@@ -4,7 +4,7 @@
     <description>
         Catch the image
     </description>
-    <author email="aleee.it@gmail.com" href="http://quik.herokuapp.com">
+    <author email="aleee.it@gmail.com" href="https://github.com/afranceschetti">
         Alessandro Franceschetti
     </author>
     <content src="mobile.html" />
@@ -24,6 +24,9 @@
 		<screen src="res/screen/android/drawable-port-ldpi/screen.png" density="port-ldpi" />
 		<screen src="res/screen/android/drawable-port-mdpi/screen.png" density="port-mdpi" />
 		<screen src="res/screen/android/drawable-port-xhdpi/screen.png" density="port-xhdpi" />
+		<feature name="SocialSharing">
+		  <param name="android-package" value="nl.xservices.plugins.SocialSharing" />
+		</feature>
 	</platform>
 
 	<platform name="wp8">
@@ -31,5 +34,8 @@
 		<splash src="res/screen/wp8/SplashScreenImage.jpg" width="768" height="1280"/>
 		<icon src="res/screen/wp8/ApplicationIcon.png" width="99" height="99" />
         <icon src="res/screen/wp8/Background.png" width="159" height="159" />
+		<feature name="SocialSharing">
+		  <param name="wp-package" value="SocialSharing"/>
+		</feature>
 	</platform>
 </widget>

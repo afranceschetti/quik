@@ -36,7 +36,7 @@ var translations_it = {
 	home_new_game: 'Gioca!', 
 	home_insert_name: 'Inserisci il tuo nome',
 	home_start_game: 'Via!',
-	home_chose_player: 'o scegli fra i giocatori qui sotto', 
+	home_choose_player: 'o scegli fra i giocatori qui sotto', 
 	home_note_saving: 'Giocatori e punteggi vengono salvati nel browser, quindi se giochi da un computer diverso o utilizzando un\'altro browser, non vedrai i risultati ottenuti qui',
 	
 	game_main_help_1:'C\'e\' solo un immagine in comune',

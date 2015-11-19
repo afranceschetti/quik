@@ -2,4 +2,5 @@ dist/
 keystore/
 platforms/
 plugins/
+store/
 Thumbs.db
