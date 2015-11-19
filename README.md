@@ -2,7 +2,7 @@
 
 A simple game made with my daughters after playing [Doodle](https://fr.wikipedia.org/wiki/Dobble). 
 
-<div align="right">
+<div align="left">
 	<img src="https://raw.githubusercontent.com/afranceschetti/quik/master/res/github/readme/logo.png" alt="Quik!"/>
 </div>
  
